@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:id="@+id/add_freelancer">
+
+    <EditText
+        android:id="@+id/input_freelancer_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name" />
+
+    <EditText
+        android:id="@+id/input_freelancer_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_freelancer_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_freelancer_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_freelancer_whatsapp_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Whatsapp Number" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_freelancer_team_lead_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Team Lead Name" 
+        android:paddingTop="16dp"/>
+
+          <Button
+        android:id="@+id/button_add_freelancer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Freelancer" 
+        android:gravity="center"
+        android:layout_gravity="center" 
+        android:layout_marginTop="16dp"
+        />
+</LinearLayout>

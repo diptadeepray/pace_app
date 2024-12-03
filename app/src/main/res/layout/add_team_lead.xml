@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:id="@+id/add_team_lead">
+
+    <EditText
+        android:id="@+id/input_team_lead_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name" />
+
+    <EditText
+        android:id="@+id/input_team_lead_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_team_lead_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_team_lead_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_team_lead_whatsapp_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Whatsapp Number" 
+        android:paddingTop="16dp"/>
+
+
+          <Button
+        android:id="@+id/button_add_team_lead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Team Lead" 
+        android:gravity="center"
+        android:layout_gravity="center" 
+        android:layout_marginTop="16dp"
+        />
+</LinearLayout>

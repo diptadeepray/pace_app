@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:id="@+id/add_task">
+
+    <EditText
+        android:id="@+id/input_task_task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Title*" />
+
+    <EditText
+        android:id="@+id/input_task_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description*" />
+
+    <EditText
+        android:id="@+id/input_task_client_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Client Name*" />
+
+        <EditText
+        android:id="@+id/input_task_assign_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Assign To*" />
+
+    <EditText
+        android:id="@+id/input_task_issue_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Issue Date*" />
+
+    <EditText
+        android:id="@+id/input_task_due_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Due Date*" />
+
+        <EditText
+        android:id="@+id/input_task_client_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Client Price" />
+
+    <EditText
+        android:id="@+id/input_task_tl_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="TL Price"/>
+
+    <EditText
+        android:id="@+id/input_task_word_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Word Count" />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit" 
+        android:gravity="center"
+        android:layout_gravity="center" 
+        android:layout_marginTop="16dp"/>
+
+        <Button
+        android:id="@+id/button_copy_task_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy Task Details" 
+        android:gravity="center"
+        android:layout_gravity="center" 
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

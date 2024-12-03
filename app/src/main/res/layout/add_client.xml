@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:id="@+id/add_client">
+
+    <EditText
+        android:id="@+id/input_client_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name" />
+
+    <EditText
+        android:id="@+id/input_client_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_referred_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Reffered By" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_college_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="College name" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_due_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Due Payment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <CheckBox
+            android:id="@+id/check_full_coursse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Full Course" 
+            android:paddingRight="30dp"/>
+
+        <CheckBox
+            android:id="@+id/check_number_of_full_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Number of full course" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/input_client_course_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Course Duration (in months)" 
+        android:paddingTop="16dp"/>
+
+    <EditText
+        android:id="@+id/input_client_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Course Name" 
+        android:paddingTop="16dp"/>
+
+          <Button
+        android:id="@+id/button_add_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Client" 
+        android:gravity="center"
+        android:layout_gravity="center" 
+        android:layout_marginTop="16dp"
+        />
+</LinearLayout>

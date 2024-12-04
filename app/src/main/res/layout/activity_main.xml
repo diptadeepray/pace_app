@@ -17,7 +17,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp"
-     android:layout_alignParentTop="true"
+    android:layout_alignParentTop="true"
     android:id="@+id/top_things">
 
     <ImageView
@@ -46,21 +46,31 @@
 
 
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- res/layout/example_activity.xml -->
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FF5733"
         android:layout_above="@+id/bottom_buttons"
-        android:layout_below="@+id/top_things">
+        android:layout_below="@+id/top_things"/>
 
-        <!-- Child Views go here -->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to PACE App"
-            android:layout_gravity="center"/>
-    </FrameLayout>
+
+
+
 
 
 
@@ -104,7 +114,7 @@
          android:scaleType="fitCenter"/>
 
             <Button
-        android:id="@+id/button_reportss"
+        android:id="@+id/button_financials"
         android:backgroundTint="@android:color/transparent"
         android:textColor="@android:color/black"
         android:layout_height="wrap_content"
@@ -128,8 +138,4 @@
          android:scaleType="fitCenter"/>
 
         </LinearLayout>
-
-
-
-
 </RelativeLayout>

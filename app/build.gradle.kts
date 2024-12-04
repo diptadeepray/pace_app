@@ -7,6 +7,12 @@ android {
     namespace = "com.example.paceapp"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding =true
+    }
+
+
+
     defaultConfig {
         applicationId = "com.example.paceapp"
         minSdk = 26
@@ -36,6 +42,8 @@ android {
 }
 
 dependencies {
+    val fragment_version = "1.8.5"
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

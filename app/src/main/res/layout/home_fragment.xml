@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home_fragment"
+    >
+
+
+    <Button
+        android:id="@+id/button_manage_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage team"
+        android:textSize="20dp"
+
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+
+        android:layout_weight="1"
+        android:padding="5dp"/>
+
+
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal"
+    android:id="@+id/home_fragment_buttons"
+    android:layout_below="@+id/button_manage_team">
+
+<Button
+    android:id="@+id/button_home_month"
+
+    android:backgroundTint="@android:color/transparent"
+
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:padding="0dp"
+    android:scaleType="fitCenter"
+    android:layout_height="30sp"
+    android:layout_alignParentTop="true"
+    android:text="Month"
+    android:textSize="20sp"
+    android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button_home_year"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@android:color/black"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+
+        android:scaleType="fitCenter"
+        android:layout_height="30sp"
+        android:layout_alignParentTop="true"
+        android:text="Year"
+        android:textSize="20sp"/>
+</LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:id="@+id/home_parameters"
+        android:layout_below="@+id/home_fragment_buttons"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/earnings"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_height="wrap_content"
+            android:text="Earnings"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/total_task"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_height="wrap_content"
+            android:text="Total Task"
+            android:textSize="20sp"
+
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/pass"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pass"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/fails"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:layout_height="wrap_content"
+            android:text="Fails"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:id="@+id/home_values"
+    android:layout_below="@+id/home_parameters"
+    android:padding="0dp">
+
+    <TextView
+        android:id="@+id/earnings_value"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:text="25k"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/total_task_value"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:textSize="20sp"
+
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/pass_value"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/fails_value"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+</LinearLayout>
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_below="@+id/home_values"
+        android:layout_margin="10dp"
+        android:id="@+id/home_add_buttons">
+
+        <TableRow>
+            <Button
+                android:id="@+id/add_new_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Task"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:id="@+id/add_new_team_lead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Team Lead"
+                android:layout_margin="5dp"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/add_new_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Client"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:id="@+id/add_new_writer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Writer"
+                android:layout_margin="5dp"/>
+        </TableRow>
+    </TableLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+
+        android:layout_below="@+id/home_add_buttons"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/home_3_scroll_view"
+        android:backgroundTint="@color/design_default_color_secondary">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:id="@+id/urgent_note_scroll"
+            android:layout_weight="1">
+
+            <!-- Inner Layout (Only One Child) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp">
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 1" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 2" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 3" />
+
+                <!-- Add your views here -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Urgent Note"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                     />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="U N 1"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="U N 2"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is a long text that you can scroll through. Keep adding views below to see the effect."
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:paddingBottom="16dp" />
+
+
+                <!-- Add more views to test scrolling -->
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:id="@+id/priority_patment_scroll"
+        android:layout_weight="1">
+
+
+        <!-- Inner Layout (Only One Child) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Add your views here -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is a long text that you can scroll through. Keep adding views below to see the effect."
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 2" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 3" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 4" />
+
+            <!-- Add more views to test scrolling -->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:id="@+id/due_task_scroll"
+            android:layout_weight="1">
+
+            <!-- Inner Layout (Only One Child) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Add your views here -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is a long text that you can scroll through. Keep adding views below to see the effect."
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:paddingBottom="16dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 1" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 2" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 3" />
+
+                <!-- Add more views to test scrolling -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 4" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button 5" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

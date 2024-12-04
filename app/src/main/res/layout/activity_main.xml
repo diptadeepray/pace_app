@@ -17,7 +17,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp"
-     android:layout_alignParentTop="true">
+     android:layout_alignParentTop="true"
+    android:id="@+id/top_things">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,17 +30,13 @@
         android:paddingRight="16dp"
         />
 
-
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Initial Text"
         android:textSize="18sp"
         android:layout_gravity="center_horizontal" />
-
-
 
 </LinearLayout>
 
@@ -49,12 +46,35 @@
 
 
 
-       <LinearLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF5733"
+        android:layout_above="@+id/bottom_buttons"
+        android:layout_below="@+id/top_things">
+
+        <!-- Child Views go here -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to PACE App"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+
+
+
+
+
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp"
-    android:id="@+id/bottom_layout"
+    android:id="@+id/bottom_buttons"
+
     
     android:layout_alignParentBottom="true">
 

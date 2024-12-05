@@ -6,172 +6,228 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:id="@+id/reports_fragment">
+    android:id="@+id/manage_your_team">
 
 
 
 
-
-
-    <TableLayout
+   <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <!-- Row 1 -->
-        <TableRow
+        <!-- Top Button -->
+        <Button
+            android:id="@+id/topButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:text="Top Button"
+            android:layout_margin="8dp" />
 
-            <Button
-                android:id="@+id/button_task_report"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/task_report"
-                android:text="Task Report"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
-
-            <Button
-                android:id="@+id/button_failed"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/failed"
-                android:text="Fail/bad Report"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
-
-        </TableRow>
-
-        <!-- Row 2 -->
-        <TableRow
+        <!-- Tables Layout -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-            <Button
-                android:id="@+id/pending_task"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/pending_task"
-                android:text="Pending Task"
-                android:layout_width="0dp"
+            <!-- Table 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
+                        <!-- Header -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Table 1 Header"
+                            android:textStyle="bold"
+                            android:layout_margin="8dp" />
 
-            <Button
-                android:id="@+id/add_new_task"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/new_task"
-                android:text="Add New Task"
-                android:layout_width="0dp"
+                        <!-- Buttons -->
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 1" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 2" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 3" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 4" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 5" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <!-- Side Button -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Action"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Repeat for Table 2 -->
+            <!-- Table 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-        </TableRow>
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-        <!-- Row 3 -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-            <Button
-                android:id="@+id/quality_client"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/quality_clients"
-                android:text="Quality Client"
-                android:layout_width="0dp"
+                        <!-- Header -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Table 2 Header"
+                            android:textStyle="bold"
+                            android:layout_margin="8dp" />
+
+                        <!-- Buttons -->
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 1" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 2" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 3" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 4" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 5" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <!-- Side Button -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Action"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Repeat for Table 3 -->
+            <!-- Table 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <Button
-                android:id="@+id/all_freelance_sheet"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/all_details"
-                android:text="All freelancers sheet"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-        </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-        <!-- Row 4 -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+                        <!-- Header -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Table 3 Header"
+                            android:textStyle="bold"
+                            android:layout_margin="8dp" />
 
-            <Button
-                android:id="@+id/all_client_sheet"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/all_clients"
-                android:text="All Client Sheet"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                        <!-- Buttons -->
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 1" />
 
-            <Button
-                android:id="@+id/all_tl_sheet"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/tl_wise_sheet"
-                android:text="all Tl Sheet"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
-    </TableRow>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 2" />
 
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 3" />
 
-        <!-- Row 4 -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 4" />
 
-            <Button
-                android:id="@+id/view_fill_course"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/full_course"
-                android:text="View Full Course"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:scaleType="fitCenter"/>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button 5" />
+                    </LinearLayout>
+                </ScrollView>
 
-        </TableRow>
+                <!-- Side Button -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Action"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 
-    </TableLayout>
+
+
+
+
 
 
 

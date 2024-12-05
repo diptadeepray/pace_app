@@ -6,75 +6,159 @@
     android:padding="30dp"
     android:id="@+id/add_task">
 
-    <EditText
-        android:id="@+id/input_task_task_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Task Title*" />
 
-    <EditText
-        android:id="@+id/input_task_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description*" />
 
-    <EditText
-        android:id="@+id/input_task_client_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Client Name*" />
 
-        <EditText
-        android:id="@+id/input_task_assign_to"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Assign To*" />
 
-    <EditText
-        android:id="@+id/input_task_issue_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Issue Date*" />
 
-    <EditText
-        android:id="@+id/input_task_due_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Due Date*" />
 
-        <EditText
-        android:id="@+id/input_task_client_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Client Price" />
 
-    <EditText
-        android:id="@+id/input_task_tl_price"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="TL Price"/>
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/input_task_word_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Word Count" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <Button
-        android:id="@+id/button_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit" 
-        android:gravity="center"
-        android:layout_gravity="center" 
-        android:layout_marginTop="16dp"/>
+            <!-- Top Button -->
+            <Button
+                android:id="@+id/topButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Top Button" />
 
-        <Button
-        android:id="@+id/button_copy_task_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Copy Task Details" 
-        android:gravity="center"
-        android:layout_gravity="center" 
-        android:layout_marginTop="16dp"/>
+            <!-- Text -->
+            <TextView
+                android:id="@+id/mainText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Main Text"
+                android:textSize="18sp" />
+
+            <!-- Three TextViews -->
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView 1" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="TextView 2" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="TextView 3" />
+
+            <!-- Another Button -->
+            <Button
+                android:id="@+id/secondButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Another Button" />
+
+            <!-- 4x2 Horizontal Table -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:stretchColumns="*">
+
+                <!-- Header Row -->
+                <TableRow>
+                    <TextView android:text="Header 1" android:layout_weight="1" />
+                    <TextView android:text="Header 2" android:layout_weight="1" />
+                    <TextView android:text="Header 3" android:layout_weight="1" />
+                    <TextView android:text="Header 4" android:layout_weight="1" />
+                </TableRow>
+
+                <!-- Data Row -->
+                <TableRow>
+                    <TextView android:text="Data 1" android:layout_weight="1" />
+                    <TextView android:text="Data 2" android:layout_weight="1" />
+                    <TextView android:text="Data 3" android:layout_weight="1" />
+                    <TextView android:text="Data 4" android:layout_weight="1" />
+                </TableRow>
+            </TableLayout>
+
+            <!-- 4x4 Table with Buttons -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:stretchColumns="*">
+
+                <!-- Rows with Buttons -->
+                <TableRow>
+                    <Button android:text="B1" android:layout_weight="1" />
+                    <Button android:text="B2" android:layout_weight="1" />
+                    <Button android:text="B3" android:layout_weight="1" />
+                    <Button android:text="B4" android:layout_weight="1" />
+                </TableRow>
+                <TableRow>
+                    <Button android:text="B5" android:layout_weight="1" />
+                    <Button android:text="B6" android:layout_weight="1" />
+                    <Button android:text="B7" android:layout_weight="1" />
+                    <Button android:text="B8" android:layout_weight="1" />
+                </TableRow>
+            </TableLayout>
+
+            <!-- Scrollable Table -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- Header Row -->
+                <TableRow>
+                    <TextView android:text="Header A" android:layout_weight="1" />
+                    <TextView android:text="Header B" android:layout_weight="1" />
+                    <TextView android:text="Header C" android:layout_weight="1" />
+                </TableRow>
+
+                <!-- Data Rows -->
+                <TableRow>
+                    <TextView android:text="Row 1 Col A" android:layout_weight="1" />
+                    <TextView android:text="Row 1 Col B" android:layout_weight="1" />
+                    <TextView android:text="Row 1 Col C" android:layout_weight="1" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="Row 2 Col A" android:layout_weight="1" />
+                    <TextView android:text="Row 2 Col B" android:layout_weight="1" />
+                    <TextView android:text="Row 2 Col C" android:layout_weight="1" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="Row 3 Col A" android:layout_weight="1" />
+                    <TextView android:text="Row 3 Col B" android:layout_weight="1" />
+                    <TextView android:text="Row 3 Col C" android:layout_weight="1" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="Row 4 Col A" android:layout_weight="1" />
+                    <TextView android:text="Row 4 Col B" android:layout_weight="1" />
+                    <TextView android:text="Row 4 Col C" android:layout_weight="1" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
 </LinearLayout>

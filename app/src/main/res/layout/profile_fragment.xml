@@ -9,7 +9,7 @@
     android:id="@+id/profile_fragment">
 
     <TextView
-        android:id="@+id/textOfReports"
+        android:id="@+id/textOfProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile Fragment"

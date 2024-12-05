@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         val button_pf: TextView = findViewById(R.id.button_profile)
 
 
+
+
         if (savedInstanceState == null) {
             val fragment = HomeFragment()
             val fragmentManager: FragmentManager = supportFragmentManager

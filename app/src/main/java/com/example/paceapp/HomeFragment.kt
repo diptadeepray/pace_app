@@ -12,6 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 
 import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+
+
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
     override fun onCreateView(
@@ -19,6 +24,5 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.home_fragment, container, false)
-
-
-        return view}}
+        return view
+    }}

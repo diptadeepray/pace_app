@@ -20,27 +20,46 @@ import android.view.LayoutInflater
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
-//import com.example.paceapp.databinding.FragmentMyBinding
+import com.example.paceapp.databinding.HomeFragmentBinding
 
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
+
+    private lateinit var binding: HomeFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.home_fragment, container, false)
-        return view
-    }
+        binding = HomeFragmentBinding.inflate(inflater, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val buttonStartActivity = view.findViewById<Button>(R.id.add_new_task)
-
-        // Set a click listener on the button to start another activity
-        buttonStartActivity.setOnClickListener {
-
+        binding.buttonManageTeam.setOnClickListener()
+        {val intent=Intent(activity,ManageYourTeam::class.java)
+            startActivity(intent)
         }
 
-    }
-}
+        binding.addNewTask.setOnClickListener()
+        {val intent=Intent(activity,AddTask::class.java)
+        startActivity(intent) }
+        binding.addNewTeamLead.setOnClickListener()
+        {val intent=Intent(activity,AddTeamLead::class.java)
+            startActivity(intent) }
+        binding.addNewClient.setOnClickListener()
+        {val intent=Intent(activity,AddClient::class.java)
+            startActivity(intent) }
+        binding.addNewWriter.setOnClickListener()
+        {val intent=Intent(activity,AddFreelancer::class.java)
+            startActivity(intent) }
+
+        return binding.root
+    }}
+
+  /*  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }*/
+
+
+
+
+

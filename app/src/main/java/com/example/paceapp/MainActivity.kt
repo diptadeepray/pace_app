@@ -11,6 +11,8 @@ import android.view.View
 
 import android.content.Intent
 
+//This import is used, so that we can use ViewBinding
+//i.e. use objects of the layouts instead of findViewById
 import com.example.paceapp.databinding.ActivityMainBinding
 
 //Importing this will not do the job
@@ -23,11 +25,22 @@ import androidx.fragment.app.FragmentTransaction
 import android.widget.Button
 import android.widget.TextView
 
+
+
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_main)
 
         val button_hm: TextView = findViewById(R.id.button_home)
         val button_rp: TextView = findViewById(R.id.button_reports)
@@ -47,14 +60,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        button_hm.setOnClickListener {
+
+        binding.buttonHome.setOnClickListener {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container_view, HomeFragment())
+            transaction.commit()
+        }
+
+       /* button_hm.setOnClickListener {
             val fragment = HomeFragment()
             val fragmentManager: FragmentManager = supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragment_container_view, fragment)
             fragmentTransaction.addToBackStack(null) // Add to backstack for navigation
             fragmentTransaction.commit()
-        }
+        }*/
+
 
         button_rp.setOnClickListener {
             val fragment = ReportsFragment()

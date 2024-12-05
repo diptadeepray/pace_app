@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         val button_hm: TextView = findViewById(R.id.button_home)
         val button_rp: TextView = findViewById(R.id.button_reports)
+        val button_fn: TextView = findViewById(R.id.button_financials)
+        val button_pf: TextView = findViewById(R.id.button_profile)
+
 
         if (savedInstanceState == null) {
             val fragment = HomeFragment()
@@ -55,6 +58,26 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.addToBackStack(null) // Add to backstack for navigation
             fragmentTransaction.commit()
         }
+
+        button_fn.setOnClickListener {
+            val fragment = FinancialsFragment()
+            val fragmentManager: FragmentManager = supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container_view, fragment)
+            fragmentTransaction.addToBackStack(null) // Add to backstack for navigation
+            fragmentTransaction.commit()
+        }
+
+        button_pf.setOnClickListener {
+            val fragment = ProfileFragment()
+            val fragmentManager: FragmentManager = supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container_view, fragment)
+            fragmentTransaction.addToBackStack(null) // Add to backstack for navigation
+            fragmentTransaction.commit()
+        }
+
+
 
     }}
 

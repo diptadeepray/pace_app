@@ -22,7 +22,7 @@
             android:id="@+id/topButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Top Button"
+            android:text="Search Here"
             android:layout_margin="8dp" />
 
         <!-- Tables Layout -->

@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.activity_main)
 
+
+
         val button_hm: TextView = findViewById(R.id.button_home)
         val button_rp: TextView = findViewById(R.id.button_reports)
         val button_fn: TextView = findViewById(R.id.button_financials)

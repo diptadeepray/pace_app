@@ -11,6 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+import  com.example.paceapp.databinding.ManageYourTeamBinding
+
 import android.widget.Button
 
 class ManageYourTeam : Fragment(R.layout.manage_your_team) {

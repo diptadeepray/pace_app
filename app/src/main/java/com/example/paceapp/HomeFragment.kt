@@ -35,8 +35,12 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
 
 
         binding.buttonManageTeam.setOnClickListener()
-        {val intent=Intent(activity,ManageYourTeam::class.java)
-            startActivity(intent)
+        {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_view, ManageYourTeam())
+                .addToBackStack(null)
+                .commit()
+
         }
 
         binding.addNewTask.setOnClickListener()

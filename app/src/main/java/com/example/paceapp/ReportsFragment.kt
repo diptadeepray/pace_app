@@ -1,5 +1,7 @@
 package com.example.paceapp
 
+import android.content.Intent
+
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,14 +13,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+import com.example.paceapp.databinding.ReportsFragmentBinding
+
 import android.widget.Button
+import com.example.paceapp.databinding.HomeFragmentBinding
+
 
 class ReportsFragment : Fragment(R.layout.reports_fragment) {
+
+    private lateinit var binding: ReportsFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.reports_fragment, container, false)
+        binding = ReportsFragmentBinding.inflate(inflater, container, false)
 
+         binding.allClientSheet.setOnClickListener()
+         {
+             parentFragmentManager.beginTransaction()
+                 .replace(R.id.fragment_container_view, ShowAllClients())
+                 .addToBackStack(null)
+                 .commit()
+         }
 
-        return view}}
+        return binding.root}}

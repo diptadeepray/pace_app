@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             val fragmentManager: FragmentManager = supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragment_container_view, fragment)
-            fragmentTransaction.addToBackStack(null) // Add to backstack for navigation
+            fragmentTransaction.addToBackStack(null) // Add to backstack for navigation //So if the user clicks on back, no screen will appear appear?
             fragmentTransaction.commit()
         }
 

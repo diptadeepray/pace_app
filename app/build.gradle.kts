@@ -42,8 +42,8 @@ android {
 }
 
 dependencies {
-    ///val fragment_version = "1.8.5"
-    //implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    val fragment_version = "1.8.5"
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
 
 
     /*val room_version = "2.6.1"

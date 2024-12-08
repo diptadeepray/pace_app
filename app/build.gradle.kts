@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    //id("com.google.devtools.ksp")
 }
 
 android {
@@ -10,9 +11,6 @@ android {
     buildFeatures {
         viewBinding= true
     }
-
-
-
 
 
     defaultConfig {
@@ -44,10 +42,22 @@ android {
 }
 
 dependencies {
-    val fragment_version = "1.8.5"
-    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    ///val fragment_version = "1.8.5"
+    //implementation("androidx.fragment:fragment-ktx:$fragment_version")
 
 
+    /*val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")*/
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    //implementation("androidx.room:room-ktx:$room_version")
+
+    // optional - Test helpers
+    //testImplementation("androidx.room:room-testing:$room_version")
+
+    // optional - Paging 3 Integration
+    //mplementation("androidx.room:room-paging:$room_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -15,6 +15,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+import com.example.paceapp.databinding.AddClientBinding
+
 class AddClient  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class AddClient  : AppCompatActivity() {
         val c_course_name= findViewById<EditText>(R.id.input_client_course_name)
 
         val c_submit= findViewById<Button>(R.id.button_add_client)
-
+/*
         val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
 
 
@@ -47,12 +49,33 @@ class AddClient  : AppCompatActivity() {
             editor.putString("Payment", data7)
             editor.putString("Course Duration", data8)
             editor.putString("Course Name", data9)
-            editor.apply()}
+            editor.apply()}*/
 
 
 
 
         c_submit.setOnClickListener() {
+
+            // below we have created
+            // a new DBHelper class,
+            // and passed context to it
+            val db = DBHelper(this, null)
+
+             // creating variables for values
+            // in name and age edit texts
+            val name = c_name.text.toString()
+            val age = c_phone.text.toString()
+
+
+            // calling method to add
+            // name to our database
+            db.addName(name, age)
+
+            // Toast to message on the screen
+            Toast.makeText(this, name + " added to database", Toast.LENGTH_LONG).show()
+
+
+
             val cc_name = c_name.text.toString()
             val cc_email = c_email.text.toString()
             val cc_phone = c_phone.text.toString()
@@ -64,7 +87,7 @@ class AddClient  : AppCompatActivity() {
             val cc_course_name = c_course_name.text.toString()
 
             if (cc_name.isNotEmpty() && cc_course_name.isNotEmpty() && cc_phone.isNotEmpty()) {
-                saveData(cc_name,cc_email,cc_phone,cc_country,cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name)
+                //saveData(cc_name,cc_email,cc_phone,cc_country,cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name)
                 Toast.makeText(this, "Data Saved!", Toast.LENGTH_SHORT).show()
                 c_name.text.clear()
                 c_email.text.clear()

@@ -22,6 +22,9 @@ class AddClient  : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_client)
 
+        // below we have created a new DBHelper class, and passed context to it
+        val db = DBHelper(this, null)
+
         val c_name = findViewById<EditText>(R.id.input_client_full_name)
         val c_email = findViewById<EditText>(R.id.input_client_email_address)
         val c_phone= findViewById<EditText>(R.id.input_client_phone_number)
@@ -33,10 +36,24 @@ class AddClient  : AppCompatActivity() {
         val c_course_name= findViewById<EditText>(R.id.input_client_course_name)
 
         val c_submit= findViewById<Button>(R.id.button_add_client)
+
+
+
+
+        val cc_name = c_name.text.toString()
+        val cc_email = c_email.text.toString()
+        val cc_phone = c_phone.text.toString()
+        val cc_country = c_country.text.toString()
+        val cc_referred = c_referred.text.toString()
+        val cc_college = c_college.text.toString()
+        val cc_due_payment = c_due_payment.text.toString()
+        val cc_course_duration = c_course_duration.text.toString()
+        val cc_course_name = c_course_name.text.toString()
+
+
+
 /*
         val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
-
-
 
         fun saveData(data1: String, data2: String, data3: String, data4: String, data5: String, data6: String,data7: String, data8: String, data9: String) {
             val editor = sharedPreferences.edit()
@@ -56,39 +73,24 @@ class AddClient  : AppCompatActivity() {
 
         c_submit.setOnClickListener() {
 
-            // below we have created
-            // a new DBHelper class,
-            // and passed context to it
-            val db = DBHelper(this, null)
 
-             // creating variables for values
-            // in name and age edit texts
-            val name = c_name.text.toString()
-            val age = c_phone.text.toString()
+
+
 
 
             // calling method to add
             // name to our database
-            db.addName(name, age)
+            db.addDetails(cc_name, cc_email,cc_phone,cc_country,
+                cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name)
 
             // Toast to message on the screen
-            Toast.makeText(this, name + " added to database", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, cc_name + " added to database", Toast.LENGTH_LONG).show()
 
 
 
-            val cc_name = c_name.text.toString()
-            val cc_email = c_email.text.toString()
-            val cc_phone = c_phone.text.toString()
-            val cc_country = c_country.text.toString()
-            val cc_referred = c_referred.text.toString()
-            val cc_college = c_college.text.toString()
-            val cc_due_payment = c_due_payment.text.toString()
-            val cc_course_duration = c_course_duration.text.toString()
-            val cc_course_name = c_course_name.text.toString()
 
             if (cc_name.isNotEmpty() && cc_course_name.isNotEmpty() && cc_phone.isNotEmpty()) {
                 //saveData(cc_name,cc_email,cc_phone,cc_country,cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name)
-                Toast.makeText(this, "Data Saved!", Toast.LENGTH_SHORT).show()
                 c_name.text.clear()
                 c_email.text.clear()
                 c_country.text.clear()

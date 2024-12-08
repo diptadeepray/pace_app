@@ -70,7 +70,15 @@ class ShowAllClients : Fragment(R.layout.show_all_client) {
         if (db != null && db.moveToFirst()) {
             do {
                 //txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.NAME_COL)) + "\n")
-                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.AGE_COL)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.NAME_COl)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.EMAIL_COL)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.PHONE_COl)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COUNTRY_COL)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.REFERRED_COl)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COLLEGE_COL)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.DUE_PAYMENT_COl)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COURSE_DURATION_COL)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COURSE_NAME)) + "\n")
             } while (db.moveToNext())
         }
         db?.close()

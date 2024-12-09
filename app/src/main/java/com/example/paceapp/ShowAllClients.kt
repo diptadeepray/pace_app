@@ -40,21 +40,23 @@ class ShowAllClients : Fragment(R.layout.show_all_client) {
         //database.execSQL("CREATE TABLE IF NOT EXISTS data (name TEXT, age INTEGER, city TEXT)")
 
 
+
         dbHelper = DBHelper(requireContext(), null)
-
-
-
         val db = dbHelper.getName()
+        val txt=binding.showText
+        txt.text=db
+
+        //txt.append(db)
+
+
+
+        // val nameBuilder = StringBuilder()
 
         // below is the variable for cursor
         // we have called method to get
         // all names from our database
         // and add to name text view
         //val cursor = db.getName()
-
-        val nameBuilder = StringBuilder()
-
-        val txt=binding.showText
 
         /*cursor!!.moveToFirst()
         txt.append(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.NAME_COl)) + "\n")
@@ -66,11 +68,11 @@ class ShowAllClients : Fragment(R.layout.show_all_client) {
             txt.append(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.NAME_COl)) + "\n")
             txt.append(cursor.getString(cursor.getColumnIndexOrThrow(DBHelper.AGE_COL)) + "\n")
         }*/
-
-        if (db != null && db.moveToFirst()) {
+/*
+        if (db != null /*&& db.moveToFirst()*/) {
             do {
                 //txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.NAME_COL)) + "\n")
-                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.NAME_COl)) + "\n")
+                /*txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.NAME_COl)) + "\n")
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.EMAIL_COL)) + "\n")
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.PHONE_COl)) + "\n")
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COUNTRY_COL)) + "\n")
@@ -78,10 +80,12 @@ class ShowAllClients : Fragment(R.layout.show_all_client) {
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COLLEGE_COL)) + "\n")
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.DUE_PAYMENT_COl)) + "\n")
                 txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COURSE_DURATION_COL)) + "\n")
-                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COURSE_NAME)) + "\n")
+                txt.append(db.getString(db.getColumnIndexOrThrow(DBHelper.COURSE_NAME)) + "\n")*/
             } while (db.moveToNext())
-        }
-        db?.close()
+        }*/
+
+
+
 
 // at last we close our cursor
         //cursor?.close()

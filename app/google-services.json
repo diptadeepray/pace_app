@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "396643960656",
+    "project_id": "pace-app-1d57f",
+    "storage_bucket": "pace-app-1d57f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396643960656:android:c5ae835ebebb53ac5cce55",
+        "android_client_info": {
+          "package_name": "com.example.paceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOQ2ctS8G9V9MSqIGkGG1EYgSjl0aTwD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

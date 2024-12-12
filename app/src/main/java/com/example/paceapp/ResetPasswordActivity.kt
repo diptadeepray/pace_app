@@ -29,26 +29,39 @@ import com.example.paceapp.databinding.ResetPasswordActivityBinding
 
 class ResetPasswordActivity : AppCompatActivity() {
 
-
     private lateinit var binding: ResetPasswordActivityBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
 
 
+
         binding = ResetPasswordActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_main)
 
-        binding.resetpasswordReturnToLogin.setOnClickListener {
+
+
+        binding.resetPasswordClickableTextBackToLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
-        binding.resetpasswordReturnToRegistration.setOnClickListener {
+        binding.resetPasswordClickableTextBackToRegistration.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
         }
 
+
+
+        binding.resetPasswordButtonOldPassword.setOnClickListener {
+            // code can be written here
+        }
+        binding.resetPasswordButtonNewPassword.setOnClickListener {
+            // code can be written here
+        }
+        binding.resetPasswordButtonConfirmNewPassword.setOnClickListener {
+            // code can be written here
+        }
+        binding.resetPasswordButtonSubmit.setOnClickListener {
+            // code can be written here
+        }
 
     }}

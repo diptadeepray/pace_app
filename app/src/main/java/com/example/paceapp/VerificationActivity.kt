@@ -42,8 +42,12 @@ class VerificationActivity : AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.activity_main)
 
-        binding.verificationBtnbacktoregistration.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+        binding.verificationClickableTextBackToRegistration.setOnClickListener {
+            startActivity(Intent(this, RegistrationActivity::class.java))
+        }
+
+        binding.verificationClickableTextSendAgain.setOnClickListener {
+            //code can be added here
         }
 
     }}

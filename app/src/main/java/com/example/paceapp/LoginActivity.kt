@@ -43,12 +43,18 @@ class LoginActivity : AppCompatActivity() {
         binding = LoginActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.loginRegistration.setOnClickListener {
+        binding.loginButtonSubmit.setOnClickListener {
+            val userName = binding.loginInputUsername.text.toString()
+            val userPassword = binding.loginInputPassword.text.toString()
+        }
+
+        binding.loginClickableTextRegistration.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
         }
 
-        binding.loginForgotPassword.setOnClickListener {
+        binding.loginClickableTextForgotPassword.setOnClickListener {
             startActivity(Intent(this, ResetPasswordActivity::class.java))
         }
+
 
     }}

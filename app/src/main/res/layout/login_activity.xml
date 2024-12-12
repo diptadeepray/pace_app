@@ -7,7 +7,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvHeader"
+        android:id="@+id/login_text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -17,26 +17,26 @@
         android:paddingBottom="16dp" />
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/login_input_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/login_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/login_button_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit" />
 
     <TextView
-        android:id="@+id/login_ForgotPassword"
+        android:id="@+id/login_clickable_text_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password"
@@ -46,7 +46,7 @@
         android:paddingTop="16dp" />
 
     <TextView
-        android:id="@+id/login_Registration"
+        android:id="@+id/login_clickable_text_registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registration"

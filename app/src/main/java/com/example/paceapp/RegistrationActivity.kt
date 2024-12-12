@@ -41,13 +41,20 @@ class RegistrationActivity : AppCompatActivity() {
         binding = RegistrationActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.registrationBtnBackToLogin.setOnClickListener {
+        binding.registrationClickableTextBackToLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        binding.registrationBtnSubmit.setOnClickListener {
+        binding.registrationButtonSubmit.setOnClickListener {
             startActivity(Intent(this, VerificationActivity::class.java))
+
+            val userName = binding.registrationInputName.text.toString()
+            val userEmail = binding.registrationInputEmail.text.toString()
+            val userPhone = binding.registrationInputPhone.text.toString()
+            val userPassword = binding.registrationInputPassword.text.toString()
+            val userConfirmPassword = binding.registrationInputConfirmPassword.text.toString()
         }
+
 
     }}
 

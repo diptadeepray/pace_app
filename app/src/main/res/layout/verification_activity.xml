@@ -8,15 +8,15 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/verification_btnbacktoregistration"
+        android:id="@+id/verification_clickable_text_back_to_registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="Back To Registration"
         android:layout_gravity="left"
         android:paddingTop="16dp" />
 
     <TextView
-        android:id="@+id/tvHeader"
+        android:id="@+id/verification_text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Verification"
@@ -26,16 +26,17 @@
         android:paddingBottom="16dp" />
 
     <TextView
-        android:id="@+id/tvMessage"
+        android:id="@+id/verification_text_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Verification link has been send to registered email id. Please verify." />
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/verification_clickable_text_send_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send Again"
+        android:clickable="true"
         android:textColor="@android:color/holo_purple"
         android:layout_gravity="center_horizontal" />
 

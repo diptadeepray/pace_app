@@ -42,5 +42,13 @@ class ResetPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.activity_main)
 
+        binding.resetpasswordReturnToLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
+        binding.resetpasswordReturnToRegistration.setOnClickListener {
+            startActivity(Intent(this, RegistrationActivity::class.java))
+        }
+
 
     }}

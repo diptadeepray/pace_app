@@ -41,8 +41,12 @@ class RegistrationActivity : AppCompatActivity() {
         binding = RegistrationActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.registrationBtnBack.setOnClickListener {
+        binding.registrationBtnBackToLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+        }
+
+        binding.registrationBtnSubmit.setOnClickListener {
+            startActivity(Intent(this, VerificationActivity::class.java))
         }
 
     }}

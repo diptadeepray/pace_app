@@ -1,5 +1,6 @@
 package com.example.paceapp
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,114 +15,127 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.paceapp.AddTeamLead.TeamLead
 
 import com.example.paceapp.databinding.AddClientBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
-class AddClient  : AppCompatActivity() {
+class AddClient : AppCompatActivity() {
 
-    lateinit var binding: AddClientBinding
+    private lateinit var binding: AddClientBinding
+    private val firestore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.add_client)
-        binding=AddClientBinding.inflate(layoutInflater)
+
+        // Initialize binding and set the layout
+        binding = AddClientBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // below we have created a new DBHelper class, and passed context to it
-        val db:DBHelper = DBHelper(this@AddClient, null)
+        // Retrieve user email from SharedPreferences
+        val sharedPreferences = getSharedPreferences("PaceAppPrefs", Context.MODE_PRIVATE)
+        val userEmail = sharedPreferences.getString("userEmail", null)
 
-        //  val c_name = findViewById<EditText>()
-        // val c_email = findViewById<EditText>(R.id.input_client_email_address)
-        /*val c_phone= findViewById<EditText>(R.id.input_client_phone_number)
-        val c_country = findViewById<EditText>(R.id.input_client_country)
-        val c_referred = findViewById<EditText>(R.id.input_client_referred_by)
-        val c_college = findViewById<EditText>(R.id.input_client_college_name)
-        val c_due_payment = findViewById<EditText>(R.id.input_client_due_payment)
-        val c_course_duration = findViewById<EditText>(R.id.input_client_course_duration)
-        val c_course_name= findViewById<EditText>(R.id.input_client_course_name)*/
-
-        val c_submit= findViewById<Button>(R.id.button_add_client)
-
-
-
-
-        /*val cc_name = c_name.text.toString()
-        val cc_email = c_email.text.toString()
-        val cc_phone = c_phone.text.toString()
-        val cc_country = c_country.text.toString()
-        val cc_referred = c_referred.text.toString()
-        val cc_college = c_college.text.toString()
-        val cc_due_payment = c_due_payment.text.toString()
-        val cc_course_duration = c_course_duration.text.toString()
-        val cc_course_name = c_course_name.text.toString()*/
-
-
-
-/*
-        val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
-
-        fun saveData(data1: String, data2: String, data3: String, data4: String, data5: String, data6: String,data7: String, data8: String, data9: String) {
-            val editor = sharedPreferences.edit()
-            editor.putString("Name", data1)
-            editor.putString("Email", data2)
-            editor.putString("Phone", data3)
-            editor.putString("Country", data4)
-            editor.putString("Refer", data5)
-            editor.putString("College", data6)
-            editor.putString("Payment", data7)
-            editor.putString("Course Duration", data8)
-            editor.putString("Course Name", data9)
-            editor.apply()}*/
-
-
-
-
-        c_submit.setOnClickListener() {
-
-
-
-
-
-
-            // calling method to add
-            // name to our database
-            val r=db.addDetails(binding.inputClientFullName.text.toString(),binding.inputClientEmailAddress.text.toString(),
-                binding.inputClientPhoneNumber.text.toString()/*,cc_phone,cc_country,
-                cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name*/)
-if(r.equals(-1)) {
-    // Toast to message on the screen
-    Toast.makeText(this, "not added to database", Toast.LENGTH_LONG).show()
-}
-            else
-{
-    Toast.makeText(this, " added to database", Toast.LENGTH_LONG).show()
-}
-
-
-
-
-                //saveData(cc_name,cc_email,cc_phone,cc_country,cc_referred,cc_college,cc_due_payment,cc_course_duration,cc_course_name)
-                //c_name.text.clear()
-                //c_email.text.clear()
-                /*c_country.text.clear()
-                c_referred.text.clear()
-                c_college.text.clear()
-                c_course_name.text.clear()
-                c_phone.text.clear()
-                c_due_payment.text.clear()
-                c_course_duration.text.clear()*/
-
-
-                Toast.makeText(this, "Data cleared", Toast.LENGTH_SHORT).show()
-
+        if (userEmail != null) {
+            Toast.makeText(this, "Welcome back, $userEmail!", Toast.LENGTH_SHORT).show()
         }
 
+        // Set OnClickListener for the addClient button
+        binding.buttonAddClient.setOnClickListener {
 
+            // Get input field values
+            val clientName = binding.inputClientFullName.text.toString().trim()
+            val clientEmail = binding.inputClientEmailAddress.text.toString().trim()
+            val clientPhone = binding.inputClientPhoneNumber.text.toString().trim()
+            val clientCountry = binding.inputClientCountry.text.toString().trim()
+            val clientReferredBy = binding.inputClientReferredBy.text.toString().trim()
+            val clientCollegeName = binding.inputClientCollegeName.text.toString().trim()
+            val clientDuePayment = binding.inputClientDuePayment.text.toString().trim()
+            val clientCourseDuration = binding.inputClientCourseDuration.text.toString().trim()
+            val clientCourseName = binding.inputClientCourseName.text.toString().trim()
 
+            // Get checkbox states
+            val isCheckbox1Checked = binding.checkFullCoursse.isChecked
+            val isCheckbox2Checked = binding.checkNumberOfFullCourse.isChecked
 
+            // Validate that at least one checkbox is selected
+            if (!isCheckbox1Checked && !isCheckbox2Checked) {
+                Toast.makeText(this, "Please select at least one type", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
+            // Determine the type of course selected
+            val clientType = when {
+                isCheckbox1Checked -> "Full Course"
+                isCheckbox2Checked -> "Number of Full Courses"
+                else -> "Unknown"
+            }
 
+            // Validate that all fields are filled
+            if (clientName.isEmpty() || clientEmail.isEmpty() || clientPhone.isEmpty() ||
+                clientCountry.isEmpty() || clientReferredBy.isEmpty() || clientCollegeName.isEmpty() ||
+                clientDuePayment.isEmpty() || clientCourseDuration.isEmpty() || clientCourseName.isEmpty()
+            ) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
+            // Create a data object for the client details
+            val clientDetails = ClientDetails(
+                name = clientName,
+                email = clientEmail,
+                phone = clientPhone,
+                country = clientCountry,
+                referredBy = clientReferredBy,
+                collegeName = clientCollegeName,
+                duePayment = clientDuePayment,
+                courseType = clientType,
+                courseDuration = clientCourseDuration,
+                courseName = clientCourseName,
+                addedByAdmin = userEmail ?: "Unknown"
+            )
 
+            // Add client details to Firestore
+            firestore.collection("ClientDetails")
+                .add(clientDetails)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Client added successfully!", Toast.LENGTH_SHORT).show()
+                    clearInputFields()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Failed to add client: ${e.message}", Toast.LENGTH_LONG).show()
+                }
+        }
     }
+
+    // Clear all input fields after successful submission
+    private fun clearInputFields() {
+        binding.inputClientFullName.text.clear()
+        binding.inputClientEmailAddress.text.clear()
+        binding.inputClientPhoneNumber.text.clear()
+        binding.inputClientCountry.text.clear()
+        binding.inputClientReferredBy.text.clear()
+        binding.inputClientCollegeName.text.clear()
+        binding.inputClientDuePayment.text.clear()
+        binding.inputClientCourseDuration.text.clear()
+        binding.inputClientCourseName.text.clear()
+        binding.checkFullCoursse.isChecked = false
+        binding.checkNumberOfFullCourse.isChecked = false
+    }
+
+    // Data model class for ClientDetails
+    data class ClientDetails(
+        val name: String,
+        val email: String,
+        val phone: String,
+        val country: String,
+        val referredBy: String,
+        val collegeName: String,
+        val duePayment: String,
+        val courseType: String,
+        val courseDuration: String,
+        val courseName: String,
+        val addedByAdmin: String
+    )
 }
+

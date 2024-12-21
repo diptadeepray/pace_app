@@ -1,5 +1,6 @@
 package com.example.paceapp
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Check if the email is verified (optional)
                         if (auth.currentUser?.isEmailVerified == true) {
+                            saveEmailToSharedPreferences(userEmail)
                             Toast.makeText(
                                 this,
                                 "Login successful! Welcome ${auth.currentUser?.email}",
@@ -122,4 +124,18 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-    }}
+    }
+
+
+    private fun saveEmailToSharedPreferences(email: String) {
+        // Obtain SharedPreferences instance
+        val sharedPreferences = getSharedPreferences("PaceAppPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        // Store the email
+        editor.putString("userEmail", email)
+        editor.apply() // Apply changes asynchronously
+    }
+
+
+}

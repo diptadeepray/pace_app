@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PACE App</string>
+
+    <string-array name="test_array">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+    </string-array>
+
 </resources>

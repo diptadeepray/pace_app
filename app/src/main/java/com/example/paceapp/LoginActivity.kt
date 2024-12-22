@@ -89,7 +89,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginClickableTextRegistration.setOnClickListener {
-            startActivity(Intent(this, RegistrationActivity::class.java))
+           // startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(Intent(this, TestTaskRecycleView::class.java))
         }
 
         binding.loginClickableTextForgotPassword.setOnClickListener {

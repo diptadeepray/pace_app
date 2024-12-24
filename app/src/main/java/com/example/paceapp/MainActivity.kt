@@ -1,5 +1,6 @@
 package com.example.paceapp
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,9 +25,7 @@ import androidx.fragment.app.FragmentTransaction
 
 import android.widget.Button
 import android.widget.TextView
-
-
-
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +36,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val sharedPreferences = getSharedPreferences("PaceAppPrefs", Context.MODE_PRIVATE)
+        val userEmail = sharedPreferences.getString("userEmail", null)
+        if (userEmail != null) {
+            Toast.makeText(this, "Welcome back, $userEmail!", Toast.LENGTH_SHORT).show()
+        }
+
         //enableEdgeToEdge()
 
 

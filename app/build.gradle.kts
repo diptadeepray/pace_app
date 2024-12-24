@@ -44,10 +44,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.auth.ktx)
     val fragment_version = "1.8.5"
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation (libs.firebase.firestore)
+
 
     /*val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")

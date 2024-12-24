@@ -13,7 +13,6 @@ class RecyclerViewAdapter(private val items: List<DataModel>) :
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleTextView: TextView = view.findViewById(R.id.textViewTitle)
-        val subtitleTextView: TextView = view.findViewById(R.id.textViewSubtitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,7 +24,6 @@ class RecyclerViewAdapter(private val items: List<DataModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.titleTextView.text = item.title
-        holder.subtitleTextView.text = item.subtitle
     }
 
     override fun getItemCount(): Int = items.size

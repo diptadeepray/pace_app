@@ -1,21 +1,15 @@
 package com.example.paceapp
 
-
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-
-
-
 import android.content.Intent
-
 
 import android.view.View
 import android.view.ViewGroup
-
 
 import android.widget.Button
 import android.widget.TextView
@@ -44,33 +38,51 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
 
-        val arrData=ArrayList<DataModel>()
+        //The data can be added here
+        val arrDataUrgentNote=ArrayList<DataModel>()
         //Add Data
-        arrData.add(DataModel("Yeh Yawani Hain Diwani","Ranbir"))
-        arrData.add(DataModel("Wake Up Sid","Ranbir again"))
+        arrDataUrgentNote.add(DataModel("Data Urgent Note 1"))
+        arrDataUrgentNote.add(DataModel("Data Urgent Note 2"))
+        arrDataUrgentNote.add(DataModel("Data Urgent Note 3"))
+        arrDataUrgentNote.add(DataModel("Data Urgent Note 4"))
 
 
-        // Sample data
-        /*val data = listOf(
-            DataModel("Title 1", "Subtitle 1"),
-            DataModel("Title 2", "Subtitle 2"),
-            DataModel("Title 3", "Subtitle 3"),
-            DataModel("Title 4", "Subtitle 4")
-        )*/
+        //The data can be added here
+        val arrDataPriorityPriority=ArrayList<DataModel>()
+        //Add Data
+        arrDataPriorityPriority.add(DataModel("Data Priority Priority 1"))
+        arrDataPriorityPriority.add(DataModel("Data Priority Priority 2"))
+        arrDataPriorityPriority.add(DataModel("Data Priority Priority 3"))
+        arrDataPriorityPriority.add(DataModel("Data Priority Priority 4"))
 
+
+        //The data can be added here
+        val arrDataClientName=ArrayList<DataModel>()
+        //Add Data
+        arrDataClientName.add(DataModel("Data Client Name 1"))
+        arrDataClientName.add(DataModel("Data Client Name 2"))
+        arrDataClientName.add(DataModel("Data Client Name 3"))
+        arrDataClientName.add(DataModel("Data Client Name 4"))
 
 
         // Find RecyclerView
-        val recyclerView = binding.urgentNoteRecyclerView
-            //view?.findViewById<RecyclerView>(R.id.recyclerView)
-
+        val recyclerViewUrgentNote = binding.urgentNoteRecyclerView
+        val recyclerViewPriorityPayment = binding.priorityPaymentRecyclerView
+        val recyclerViewClientName = binding.clientNameRecyclerView
 
         // Set layout manager
-        recyclerView.layoutManager = GridLayoutManager(requireActivity(),3)
-            //LinearLayoutManager(this)
+        recyclerViewUrgentNote.layoutManager = GridLayoutManager(requireActivity(),3)
+        recyclerViewPriorityPayment.layoutManager = GridLayoutManager(requireActivity(),3)
+        recyclerViewClientName.layoutManager = GridLayoutManager(requireActivity(),3)
 
         // Set adapter
-        recyclerView.adapter = RecyclerViewAdapter(arrData)
+        recyclerViewUrgentNote.adapter = RecyclerViewAdapter(arrDataUrgentNote)
+        recyclerViewPriorityPayment.adapter = RecyclerViewAdapter(arrDataPriorityPriority)
+        recyclerViewClientName.adapter = RecyclerViewAdapter(arrDataUrgentNote)
+
+
+
+
 
 
         binding.buttonManageTeam.setOnClickListener()
